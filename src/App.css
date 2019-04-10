@@ -24,3 +24,22 @@
   margin-top: 6%;
   margin-left: 27%;
 }
+
+.Quiz-Directions {
+  position: relative;
+  text-align: center;
+  color: blue;
+}
+
+.Quiz-Question {
+  text-align: center;
+}
+.Quiz-Button {
+  margin-left: 28%;
+  margin-bottom: 3%;
+}
+
+.Quiz-Button-Finished {
+  margin-top: 2%;
+  margin-left: 44%;
+}

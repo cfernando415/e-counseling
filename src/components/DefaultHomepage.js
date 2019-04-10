@@ -15,7 +15,7 @@ const DefaultHomepage = props => {
                 <br />
                 <span className="Homepage text span-3">Would you like to take a quiz to see if this is a good time to speak with a professional?</span>
                 <br />
-                <button className="Homepage-button">Definitely!</button>
+                <button className="Homepage-button" onClick={event => props.redirectToQuizHandler()}>Definitely!</button>
                 <button className="Homepage-button" onClick={event => props.redirectToReferralHandler()}>Not Right Now</button>
             </div>
     )
