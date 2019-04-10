@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import CounselorContainer from './containers/CounselorContainer'
+import CounselorProfile from './components/CounselorProfile'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 class App extends Component {
   constructor (props) {
@@ -24,13 +26,21 @@ class App extends Component {
   }
 
   render () {
-    console.log(this.state)
     return (
       <div>
-        <CounselorContainer counselors={this.state.counselors} />
+        <Switch>
+          <Route
+            path='/counselorprofile/:id'
+            render={() => <CounselorProfile counselors={this.state.counselors} {...this.props} />}
+          />
+          <Route
+            path='/counselors'
+            render={() => <CounselorContainer counselors={this.state.counselors} />}
+          />
+        </Switch>
       </div>
     )
   }
 }
 
-export default App
+export default withRouter(App)

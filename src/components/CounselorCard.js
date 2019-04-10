@@ -1,20 +1,40 @@
 import React from 'react'
-// import CounselorProfile from './CounselorProfile'
+import { Link } from 'react-router-dom';
+// import CounselorProfile from './CounselorProfile';
 
-const CounselorCard = (props) => {
-  let truncatedBio = props.counselor.bio.substring(0, 200)
-  let { counselor } = props
 
-  return (
-    <div className="counselor-card-container">
-      <div className="counselor-card-img">
-        <img className="counselor-img" src={counselor.image} alt="counselor pic" />
+class CounselorCard extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      chosenCounselor: {}
+    }
+  }
+
+  clickHandler (e, counselor) {
+    this.setState({
+      chosenCounselor: counselor
+    })
+    // this.props.counselorChosen(counselor)
+  }
+
+  render () {
+    let truncatedBio = this.props.counselor.bio.substring(0, 200)
+    let { counselor } = this.props
+    return (
+      <div className="counselor-card-container">
+        <div className="counselor-card-img">
+          <img className="counselor-img" src={counselor.image} alt="counselor pic" />
+        </div>
+        <div className="counselor-card-bio">
+          <Link to={`/counselorprofile/${counselor.id}`}>
+            <h3 onClick={(e) => this.clickHandler(e, counselor)}>{counselor.name}</h3>
+          </Link>
+          <p>{truncatedBio}...</p>
+        </div>
       </div>
-      <div className="counselor-card-bio">
-        <h1>{counselor.name}</h1>
-        <p>{truncatedBio}...</p>
-      </div>
-    </div>
-  )
+      
+    )
+  }
 }
 export default CounselorCard
