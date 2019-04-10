@@ -1,9 +1,12 @@
 import React from 'react'
+import Homepage from './containers/Homepage';
 import './App.css'
 
 const App = () => {
   return (
-    <React.Fragment>{}</React.Fragment>
+    <React.Fragment>{
+      <Homepage />
+    }</React.Fragment>
   )
 }
 
