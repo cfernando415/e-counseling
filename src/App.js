@@ -3,6 +3,7 @@ import './App.css'
 import CounselorContainer from './containers/CounselorContainer'
 import CounselorProfile from './components/CounselorProfile'
 import { Route, Switch, withRouter } from 'react-router-dom'
+import ReviewForm from './components/ReviewForm'
 
 class App extends Component {
   constructor (props) {
@@ -36,6 +37,10 @@ class App extends Component {
           <Route
             path='/counselors'
             render={() => <CounselorContainer counselors={this.state.counselors} />}
+          />
+          <Route
+            path='/review'
+            component={ReviewForm}
           />
         </Switch>
       </div>
