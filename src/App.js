@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+
 import './App.css'
 import CounselorContainer from './containers/CounselorContainer'
 import CounselorProfile from './components/CounselorProfile'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import ReviewForm from './components/ReviewForm'
+import Homepage from './containers/Homepage'
 
 class App extends Component {
   constructor (props) {
@@ -42,10 +44,15 @@ class App extends Component {
             path='/review'
             component={ReviewForm}
           />
+          <Route
+            path='/'
+            component={Homepage}
+          />
         </Switch>
       </div>
     )
   }
+
 }
 
 export default withRouter(App)
