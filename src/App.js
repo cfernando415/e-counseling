@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './App.css'
+import CounselorContainer from './containers/CounselorContainer'
 
-const App = () => {
-  return (
-    <React.Fragment>{}</React.Fragment>
-  )
+class App extends Component {
+  state = {
+    users: []
+  }
+
+  componentDidMount(){
+    
+  }
+  render () {
+    return (
+      <div>
+        <CounselorContainer />
+      </div>
+    )
+  }
 }
 
 export default App
