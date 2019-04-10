@@ -6,7 +6,7 @@ const CounselorContainer = (props) => {
     <div>
       <h1>Counselor Container</h1>
       {props.counselors.map((counselor)=>
-        <CounselorCard counselor={counselor}/>
+        <CounselorCard key={counselor.id} counselor={counselor}/>
         )}
     </div>
   )

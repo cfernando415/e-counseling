@@ -31,3 +31,25 @@
     transform: rotate(360deg);
   }
 }
+.counselor-img {
+  height: auto;
+  width: 110px;
+  border-radius: 25px;
+}
+.counselor-card-container {
+  display: flex;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 1em;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.counselor-card-img {
+  justify-content: center;
+  padding: 1em;
+}
+.counselor-card-bio {
+  justify-content: center;
+  padding: 1em;
+}
