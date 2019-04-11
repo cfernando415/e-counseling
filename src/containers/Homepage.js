@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DefaultHomepage from '../components/DefaultHomepage';
-import ReferralPage from '../components/ReferralPage';
-import QuizPage from '../components/Quizpage';
+// import ReferralPage from '../components/ReferralPage';
+// import QuizPage from '../components/Quizpage';
 import '../App.css';
 
 export default class Homepage extends Component {
