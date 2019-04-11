@@ -6,13 +6,18 @@ import CounselorProfile from './components/CounselorProfile'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import ReviewForm from './components/ReviewForm'
 import Homepage from './containers/Homepage'
+import Quizpage from './components/Quizpage'
+import ReferralPage from './components/ReferralPage'
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
       counselors: [],
-      patients: []
+      patients: [],
+      quizResults: {}
     }
   }
   componentDidMount () {
@@ -28,6 +33,10 @@ class App extends Component {
       })
   }
 
+  quizHandler = (results) => {
+    console.log(results)
+  }
+
   render () {
     return (
       <div>
@@ -41,8 +50,24 @@ class App extends Component {
             render={() => <CounselorContainer counselors={this.state.counselors} />}
           />
           <Route
+            path='/referral'
+            component={ReferralPage}
+          />
+          <Route
             path='/review'
             component={ReviewForm}
+          />
+          <Route
+            path='/login'
+            component={Login}
+          />
+          <Route
+            path='/signup'
+            component={Signup}
+          />
+          <Route
+            path='/quiz'
+            render={()=> <Quizpage results={this.quizHandler}/>}
           />
           <Route
             path='/'

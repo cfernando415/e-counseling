@@ -6,39 +6,38 @@ import '../App.css';
 
 export default class Homepage extends Component {
 
-    state={
-        homepage: "default"
-    }
+    // state={
+    //     homepage: "default"
+    // }
 
-    homepageHandler = () => {
-        switch(this.state.homepage) {
-            case "default":
-                return <DefaultHomepage redirectToReferralHandler={event => this.redirectToReferralHandler()} redirectToQuizHandler={event => this.redirectToQuizHandler()}/>
-            case "referral-page":
-                return <ReferralPage redirectToHomepageHandler={event => this.redirectToHomepageHandler()}/>
-            case "quiz-page":
-                return <QuizPage />
-            default:
-                return <DefaultHomepage redirectToReferralHandler={event => this.redirectToReferralHandler()} redirectToQuizHandler={event => this.redirectToQuizHandler()}/>
-        }
-    }
+    // homepageHandler = () => {
+    //     switch(this.state.homepage) {
+    //         case "default":
+    //             return <DefaultHomepage redirectToReferralHandler={event => this.redirectToReferralHandler()} redirectToQuizHandler={event => this.redirectToQuizHandler()}/>
+    //         case "referral-page":
+    //             return <ReferralPage redirectToHomepageHandler={event => this.redirectToHomepageHandler()}/>
+    //         case "quiz-page":
+    //             return <QuizPage />
+    //         default:
+    //             return <DefaultHomepage redirectToReferralHandler={event => this.redirectToReferralHandler()} redirectToQuizHandler={event => this.redirectToQuizHandler()}/>
+    //     }
+    // }
 
-    redirectToReferralHandler = event => {
-        this.setState({homepage: "referral-page"})
-    }
+    // redirectToReferralHandler = event => {
+    //     this.setState({homepage: "referral-page"})
+    // }
 
-    redirectToHomepageHandler = event => {
-        this.setState({homepage: "default"})
-    }
+    // redirectToHomepageHandler = event => {
+    //     this.setState({homepage: "default"})
+    // }
 
-    redirectToQuizHandler = event => {
-        this.setState({homepage: "quiz-page"})
-    }
+    // redirectToQuizHandler = event => {
+    //     this.setState({homepage: "quiz-page"})
+    // }
 
-
-    render(){
-        return(
-            this.homepageHandler()
-        )
-    }
+  render () {
+    return (
+      <DefaultHomepage />
+    )
+  }
 }
