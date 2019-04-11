@@ -17,15 +17,15 @@ class App extends Component {
   }
   componentDidMount () {
     fetch('http://localhost:3001/api/v1/users')
-    .then(res => res.json())
-    .then(data => {
-      let counselorList = data.filter((user) => user.specialty !== null)
-      let patientList = data.filter((user) => user.specialty === null)
-      this.setState({
-        counselors: counselorList,
-        patients: patientList
+      .then(res => res.json())
+      .then(data => {
+        let counselorList = data.filter((user) => user.specialty !== null)
+        let patientList = data.filter((user) => user.specialty === null)
+        this.setState({
+          counselors: counselorList,
+          patients: patientList
+        })
       })
-    })
   }
 
   render () {
