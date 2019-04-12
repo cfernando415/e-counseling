@@ -58,7 +58,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/session" component={Session} />
+          <Route path="/session/:id" component={Session} />
           <Route
             path="/counselorprofile/:id"
             render={() => (

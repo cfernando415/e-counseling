@@ -28,7 +28,7 @@ class Login extends React.Component {
         role: this.state.role
       });
       this.props.history.push({
-        pathname: "/session",
+        pathname: `/session/${this.state.email.split("@")[0]}`,
         state: {
           peer: this.state.email
         }
