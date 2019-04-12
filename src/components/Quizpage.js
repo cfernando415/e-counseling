@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css'
 
 export default class Quizpage extends Component {
@@ -31,9 +32,15 @@ export default class Quizpage extends Component {
         })
     }
 
+    finishedButtonHandler = () => {
+        if (this.state.question1response === null || this.state.question2response === null || this.state.question3response === null || this.state.question4response === null) {
+            return <input type='submit' className="Quiz-Button-Finished" onClick={event => this.validateQuestions(event)} />
+        } else if (this.state.question1response === false || this.state.question2response === false || this.state.question3response === false || this.state.question4response === false) {
+            return <Link to='/thanks'> <input type='submit' className="Quiz-Button-Finished"/> </Link>
+        }
+    }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <h3 className="Quiz-Directions">Please select True or False for the following questions: </h3>
@@ -61,8 +68,7 @@ export default class Quizpage extends Component {
                     <button className="Quiz-Button Quiz-Button-False" id="question4response" value="false" onClick={event => this.responseHandler(event)}>False</button>
                     <br />
                 </form>
-                <input type='submit' className="Quiz-Button-Finished" onClick={event => this.validateQuestions(event)} />
-            
+                {this.finishedButtonHandler()}
             </div>
         )
     }

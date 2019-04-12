@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import './App.css'
 import CounselorContainer from './containers/CounselorContainer'
 import CounselorProfile from './components/CounselorProfile'
@@ -7,6 +6,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 import ReviewForm from './components/ReviewForm'
 import Homepage from './containers/Homepage'
 import Quizpage from './components/Quizpage'
+import QuizPageThanks from './components/QuizPageThanks';
 import ReferralPage from './components/ReferralPage'
 import Login from './components/Login'
 import Signup from './components/Signup'
@@ -68,6 +68,10 @@ class App extends Component {
           <Route
             path='/quiz'
             render={()=> <Quizpage results={this.quizHandler}/>}
+          />
+          <Route 
+            path='/thanks'
+            component={QuizPageThanks}
           />
           <Route
             path='/'

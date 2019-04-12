@@ -16,8 +16,8 @@ const DefaultHomepage = props => {
       <br />
       <span className="Homepage text span-3">Would you like to take a quiz to see if this is a good time to speak with a professional?</span>
       <br />
-      <Link to='/quiz' className='Homepage-button'><button>Definitely!</button></Link>
-      <Link to='/referral' className='Homepage-button'><button>Not Right Now</button></Link>
+      <Link to='/quiz'><button className='Homepage-button'>Definitely!</button></Link>
+      <Link to='/referral'><button className='Homepage-button'>Not Right Now</button></Link>
     </div>
   )
 }
