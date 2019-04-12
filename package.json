@@ -5,9 +5,11 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "rtcmulticonnection": "^3.6.8",
-    "socket.io": "^2.2.0"
+    "react-stars": "^2.2.5",
+    "simple-peer": "^9.3.0",
+    "typescript": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
