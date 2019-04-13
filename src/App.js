@@ -10,6 +10,9 @@ import ReferralPage from "./components/ReferralPage";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Session from "./containers/session";
+// import { getPositionOfLineAndCharacter } from "typescript";
+
+const BASE_URL = "http://localhost:3000";
 
 class App extends Component {
   constructor(props) {
@@ -19,17 +22,16 @@ class App extends Component {
       counselors: [],
       patients: [],
       quizResults: {},
-      sockets: []
+      sockets: [],
+      role: ""
     };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/users")
+    fetch(`${BASE_URL}/api/v1/users`)
       .then(res => res.json())
       .then(data => {
-        let counselorList = data
-          .filter(user => user.specialty !== null)
-          .map(counselor => ({ ...counselor, status: "offline" }));
+        let counselorList = data.filter(user => user.specialty !== null);
         let patientList = data.filter(user => user.specialty === null);
         this.setState({
           counselors: counselorList,
@@ -48,9 +50,16 @@ class App extends Component {
       counselors.forEach(counselor => {
         if (counselor.email.toLowerCase() === user.email.toLowerCase()) {
           counselor.status = "online";
+          const opt = {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ status: "online" })
+          };
+
+          fetch(`${BASE_URL}/api/v1/users/1`, opt);
         }
       });
-      this.setState({ counselors });
+      this.setState({ counselors, role: user.role });
     }
   };
 

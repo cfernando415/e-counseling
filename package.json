@@ -3,18 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-stars": "^2.2.5",
     "simple-peer": "^9.3.0",
-    "typescript": "^3.4.3"
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "typescript": "^3.4.3",
+    "usermedia": "^1.0.3",
+    "uws": "^10.148.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "dev": "nodemon server/index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
